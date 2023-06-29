@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik-Tok Game</title>
+    <style>
+        .main-container{
+            border: 2px solid black;
+            width: 40%;
+            margin: auto;
+            margin-top: 40px;
+            height: 50vh;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+        .child-div{
+            border: 2px solid red;
+            width: 30%;
+            height: 30%;
+            text-align: center;
+            font-size: 3rem;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="child-div" id="div-1" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-2" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-3" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-4" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-5" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-6" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-7" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-8" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-9" onclick="insertValue(this.id)"></div>
+    </div>
+
+    <script>
+        let winMoves = [[1,2,3] , [4,5,6] , [7,8,9] , [1,4,7] , [2,5,8] , [3,6,9], [1,5,9] , [3,5,7]];
+
+        let moves = {};
+
+        let numberOfMoves = 0;
+        function insertValue(id){
+            let div1 = document.getElementById(id);
+            if((numberOfMoves%2) == 0){
+                div1.innerText = "X";
+                moves.appendchild += div1;
+            }
+            
+            if(numberOfMoves%2 !== 0){
+                div1.innerText = "O";
+                moves.appendchild += div1;
+            }
+            numberOfMoves++;
+
+            if(numberOfMoves > 5){
+                hasSomeOneWon();
+            }
+        }
+        console.log(moves)
+
+        function hasSomeOneWon(){
+
+        }
+
+
+        
+        
+
+    </script>
+</body>
+</html>
