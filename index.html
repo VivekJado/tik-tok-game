@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tik-Tak Game</title>
+    <title>Tik-Tok Game</title>
     <style>
         .main-container{
             border: 2px solid black;
@@ -25,12 +25,10 @@
             font-size: 3rem;
             
         }
-        
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div class="child-div" id="div-0" onclick="insertValue(this.id)"></div>
         <div class="child-div" id="div-1" onclick="insertValue(this.id)"></div>
         <div class="child-div" id="div-2" onclick="insertValue(this.id)"></div>
         <div class="child-div" id="div-3" onclick="insertValue(this.id)"></div>
@@ -39,48 +37,59 @@
         <div class="child-div" id="div-6" onclick="insertValue(this.id)"></div>
         <div class="child-div" id="div-7" onclick="insertValue(this.id)"></div>
         <div class="child-div" id="div-8" onclick="insertValue(this.id)"></div>
+        <div class="child-div" id="div-9" onclick="insertValue(this.id)"></div>
     </div>
 
     <script>
         let winMoves = [[1,2,3] , [4,5,6] , [7,8,9] , [1,4,7] , [2,5,8] , [3,6,9], [1,5,9] , [3,5,7]];
-        
-        let movesX = [];
-        let movesO = [];
+
+        let moves = {};
+
         let numberOfMoves = 0;
         function insertValue(id){
-            
             let div1 = document.getElementById(id);
-            
             if((numberOfMoves%2) == 0){
                 div1.innerText = "X";
-                movesX.push(div1.innerText);
+                moves.appendchild += div1;
             }
             
             if(numberOfMoves%2 !== 0){
                 div1.innerText = "O";
-                movesO.push(div1.innerText);
+                moves.appendchild += div1;
             }
             numberOfMoves++;
-            
-             if(numberOfMoves >= 5){
+
+            if(numberOfMoves > 5){
                 hasSomeOneWon();
             }
         }
-
-        console.log(movesX);
-        console.log(movesO);
-       
+        console.log(moves)
 
         function hasSomeOneWon(){
-            if(!winMoves.includes(movesO))
-   
-            console.log("O is winner");
+
         }
 
 
-        
-        
+    if(xCounter === 3){
+      console.log('x is winner', index + 1)
+      winnerFound = true;
+      break;
+    }
+
+    if(oCounter === 3){
+      console.log('o is winner', index + 1)
+      winnerFound = true;
+      break;
+    }
+
+    xCounter = 0;
+    oCounter = 0;
+  }
+  if (winnerFound !== true) {
+        console.log("The game was draw");
+      }
+          }
 
     </script>
-</body>
+  </body>
 </html>
