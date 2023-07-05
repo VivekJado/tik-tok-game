@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #main{
+            border: 2px solid black;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 40%;
+            height: 70vh;
+            margin: auto;
+        }
+        #main div{
+            border: 2px solid red;
+            width: 30%;
+            height: 120px;
+            font-size: 70px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="child-1" onclick="insertValue(this.id)"></div>
+      <div id="child-2" onclick="insertValue(this.id)"></div>
+      <div id="child-3" onclick="insertValue(this.id)"></div>
+      <div id="child-4" onclick="insertValue(this.id)"></div>
+      <div id="child-5" onclick="insertValue(this.id)"></div>
+      <div id="child-6" onclick="insertValue(this.id)"></div>
+      <div id="child-7" onclick="insertValue(this.id)"></div>
+      <div id="child-8" onclick="insertValue(this.id)"></div>
+      <div id="child-9" onclick="insertValue(this.id)"></div>
+    </div>
+    
+    <script>
+        let numberOfMoves = 0;
+        let mainDiv = document.querySelector('#main').innerText;
+      function insertValue(id) {
+        if (numberOfMoves%2 == 0) {
+            document.getElementById(id).innerText = "X";
+
+        }
+
+        if (numberOfMoves%2 !== 0) {
+            document.getElementById(id).innerText = "O";
+
+        }
+        numberOfMoves++;
+      }
+      console.log(mainDiv);
+      for (let index = 0; index < mainDiv.length; index++) {
+        const element = mainDiv[index];
+        console.log(element);
+        
+      }
+    </script>
+  </body>
+</html>
